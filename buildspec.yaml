@@ -20,10 +20,9 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
-      - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
-      - printf '[{"name":"ecr-c1","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"ecr-c1","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > images.json
       - cat images.json
 artifacts:
     files: images.json
