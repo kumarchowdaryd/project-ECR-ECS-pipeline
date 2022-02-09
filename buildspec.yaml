@@ -24,4 +24,5 @@ post_build:
       - printf '[{"name":"ecr-c1","imageUri":"%s"}]'    $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - cat imagedefinitions.json
 artifacts:
-  files: imagedefinitions.json
+  files: 
+    - '**/*'
